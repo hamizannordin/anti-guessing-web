@@ -1,0 +1,18 @@
+<div class="card">
+    <form id="guess-form">
+        <label>Place 8-digit number here:</label>
+        <input type="text" max="8">
+        <button type="submit" (click)="$event.preventDefault();">Submit</button>
+    </form>
+</div>
+
+<div class="card">
+    <div *ngIf="betList.length == 0; else displayBetList">
+        Start placing your bet!</div>
+</div>
+
+<ng-template #displayBetList>
+    <div *ngFor="let bet of betList">
+        {{bet.combination}}
+    </div>
+</ng-template>
