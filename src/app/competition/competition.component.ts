@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-competition',
   templateUrl: './competition.component.html',
-  styleUrls: ['./competition.component.css']
+  styleUrls: ['./competition.component.css', '../../styles.css']
 })
 export class CompetitionComponent {
   competitionName = crypto.randomUUID();
