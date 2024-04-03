@@ -1,18 +1,32 @@
-<div class="card">
+<div class="input-card">
     <form id="guess-form">
         <label>Place 8-digit number here:</label>
-        <input type="text" max="8">
+        <input type="text" minlength="8" maxlength="8">
         <button type="submit" (click)="$event.preventDefault();">Submit</button>
     </form>
 </div>
 
-<div class="card">
-    <div *ngIf="betList.length == 0; else displayBetList">
-        Start placing your bet!</div>
+<div class="glass-card">
+    <div class="populate-random-card">
+        <form id="populate-random">
+            <!-- <label>Generate random guess for me!</label> -->
+            <button type="submit" (click)="$event.preventDefault();">Generate Random
+                Bet</button>
+            <input type="number" min="1" max="9999" placeholder="Total">
+        </form>
+    </div>
+    <div class="bet-card-list">
+        <div class="bet-card" *ngIf="betList.length == 0; else displayBetList">
+            <h2>Start placing your bet!</h2>
+        </div>
+    </div>
+    <div class="bet-card-draw" *ngIf="betList.length > 0">
+        <button type="submit" (click)="$event.preventDefault();">Draw</button>
+    </div>
 </div>
 
 <ng-template #displayBetList>
-    <div *ngFor="let bet of betList">
+    <div class="bet-card" *ngFor="let bet of betList">
         {{bet.combination}}
     </div>
 </ng-template>
