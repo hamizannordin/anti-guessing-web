@@ -7,5 +7,12 @@ import { WinnerItem } from 'src/model/winnerItem';
   styleUrls: ['./winner.component.css', '../app.component.css']
 })
 export class WinnerComponent {
-  winnerItem: WinnerItem = new WinnerItem();
+  winnerItem: WinnerItem | undefined;
+
+  // winnerAbsoluteList = this.winnerItem.winnerAbsoluteList = ['123','123'];
+  // winnerAlmostList = this.winnerItem.winnerAlmostList = ['234'];
+  // firstRunnerUpAbsoluteList = this.winnerItem.firstRunnerUpAbsoluteList = ['123','123'];
+  // firstRunnerUpAlmostList = this.winnerItem.firstRunnerUpAlmostList = ['234'];
+  // secondRunnerUpAbsoluteList = this.winnerItem.secondRunnerUpAbsoluteList = ['123','123'];
+  // secondRunnerUpAlmostList = this.winnerItem.secondRunnerUpAlmostList = ['234'];
 }

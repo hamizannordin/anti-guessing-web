@@ -1,23 +1,26 @@
-<div id="winner-absolute" class="card" *ngIf="winnerItem.winnerAbsoluteList != null">
-    <p>Congrats!!!</p>
-</div>
+<div class="winner-card" *ngIf="winnerItem != null">
+    <h2>Here comes the result...</h2>
+    <div id="winner-absolute" class="winner-card-child" *ngIf="winnerItem.winnerAbsoluteList != null">
+        <p>Congrats!!! winner</p>
+    </div>
 
-<div id="winner-almost" class="card" *ngIf="winnerItem.winnerAlmostList != null">
-    <p>Congrats!!!</p>
-</div>
+    <div id="winner-almost" class="winner-card-child" *ngIf="winnerItem.winnerAlmostList != null">
+        <p>Congrats!!! almost winner</p>
+    </div>
 
-<div id="first-runner-up-absolute" class="card" *ngIf="winnerItem.firstRunnerUpAbsoluteList != null">
-    <p>Congrats!!!</p>
-</div>
+    <div id="first-runner-up-absolute" class="winner-card-child" *ngIf="winnerItem.firstRunnerUpAbsoluteList != null">
+        <p>Congrats!!! first runner up</p>
+    </div>
 
-<div id="first-runner-up-almost" class="card" *ngIf="winnerItem.firstRunnerUpAlmostList != null">
-    <p>Congrats!!!</p>
-</div>
+    <div id="second-runner-up-absolute" class="winner-card-child" *ngIf="winnerItem.secondRunnerUpAbsoluteList != null">
+        <p>Congrats!!! second runner up</p>
+    </div>
 
-<div id="second-runner-up-absolute" class="card" *ngIf="winnerItem.secondRunnerUpAbsoluteList != null">
-    <p>Congrats!!!</p>
-</div>
+    <div id="first-runner-up-almost" class="winner-card-child" *ngIf="winnerItem.firstRunnerUpAlmostList != null">
+        <p>Congrats!!! almost first runner up</p>
+    </div>
 
-<div id="second-runner-up-almost" class="card" *ngIf="winnerItem.secondRunnerUpAlmostList != null">
-    <p>Congrats!!!</p>
+    <div id="second-runner-up-almost" class="winner-card-child" *ngIf="winnerItem.secondRunnerUpAlmostList != null">
+        <p>Congrats!!! almost second runner up</p>
+    </div>
 </div>
