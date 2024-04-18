@@ -17,12 +17,13 @@ export class CompetitionComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    //throw new Error('Method not implemented.');
+    this.competitionService.currentFlag.subscribe();
   }
 
   resetCompetition() {
     this.competitionName = crypto.randomUUID();
     this.createNewCompetition();
+    this.competitionService.setResetFlag(true);
   }
 
   async createNewCompetition() {

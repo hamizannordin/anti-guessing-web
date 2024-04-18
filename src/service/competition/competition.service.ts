@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
 import { environment } from 'src/environments/environment';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompetitionService {
+
+  private resetFlag = new BehaviorSubject(false);
+  currentFlag = this.resetFlag.asObservable();
 
   private createCompetitionRequest = {
     competitionName: String()
@@ -34,5 +38,13 @@ export class CompetitionService {
           console.error(reason);
         });
     });
+  }
+
+  getCompetitionId(): string {
+    return this.competitionDetailResponse.competitionId;
+  }
+
+  setResetFlag(status: boolean) {
+    this.resetFlag.next(status);
   }
 }
