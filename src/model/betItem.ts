@@ -1,3 +1,11 @@
 export class BetItem {
-    constructor(public competitionId: String, public combination: String) { };
+
+    competitionId: any;
+    combination: String[];
+    combinationInString: String | undefined;
+
+    constructor(competitionId: String, combination: String[]) { 
+        this.competitionId = competitionId;
+        this.combination = combination;
+    };
 }
