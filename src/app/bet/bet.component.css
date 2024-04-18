@@ -22,7 +22,7 @@
 
 .populate-random-card input {
     text-align: center;
-    /* border: hidden; */
+    background: none;
     padding: 10px;
     margin: 10px;
     width: 75px;
