@@ -15,6 +15,10 @@ export class DrawComponent implements OnInit {
   constructor(private competitionService: CompetitionService, private drawService: DrawService) { }
 
   ngOnInit(): void {
+    this.competitionService.currentFlag.subscribe(flag => {
+      if(flag)
+        this.drawItem = undefined;
+    });
     this.drawService.drawFlag.subscribe(flag => {
       if (flag)
         this.drawNumber();
