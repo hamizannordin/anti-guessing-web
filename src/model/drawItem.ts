@@ -1,6 +1,11 @@
+import { CompetitionItem } from "./competitionItem";
+
 export class DrawItem {
-    constructor(public competitionId: String) { };
-    winnerDraw: String | undefined;
-    firstRunnerUpDraw: String | undefined;
-    secondRunnerUpDraw: String | undefined;
+
+    competitionId: CompetitionItem | undefined;
+    draw0: string | undefined;
+    draw1: string | undefined;
+    draw2: string | undefined;
+
+    constructor() { }
 }
