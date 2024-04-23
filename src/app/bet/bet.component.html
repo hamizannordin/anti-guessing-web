@@ -1,4 +1,4 @@
-<div class="input-card">
+<div class="input-card" [hidden]="betDisable">
     <!-- <form id="guess-form"> -->
         <label>Place 8-digit number here:</label>
         <input [(ngModel)]="inputBox" type="text" minlength="8" maxlength="8">
@@ -7,7 +7,7 @@
 </div>
 
 <div class="glass-card">
-    <div class="populate-random-card">
+    <div class="populate-random-card" [hidden]="betDisable">
         <!-- <form id="populate-random"> -->
             <!-- <label>Generate random guess for me!</label> -->
             <button type="submit" (click)="createRandomBet()">Generate Random
@@ -20,7 +20,7 @@
             <h2>Start placing your bet!</h2>
         </div>
     </div>
-    <div class="bet-card-draw" *ngIf="betList.length > 0">
+    <div class="bet-card-draw" [hidden]="betDisable" *ngIf="betList.length > 0">
         <button type="submit" (click)="drawBet()">Draw</button>
     </div>
 </div>

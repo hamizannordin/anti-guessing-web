@@ -13,15 +13,23 @@ export class BetComponent implements OnInit {
   betList: string[] = [];
   inputBox: string = '';
   totalBox: string = '';
+  betDisable: boolean = false;
 
   constructor(
     private betService: BetService,
     private competitionService: CompetitionService,
     private drawService: DrawService) { }
+
   ngOnInit(): void {
     this.competitionService.currentFlag.subscribe(flag => {
-      if (flag)
+      if (flag) {
         this.clearBet();
+        this.betDisable = false;
+      }
+    });
+    this.drawService.drawFlag.subscribe(flag => {
+      if (flag)
+        this.disableBetFunction();
     });
   }
 
@@ -58,7 +66,11 @@ export class BetComponent implements OnInit {
     this.totalBox = '';
   }
 
-  drawBet(){
+  drawBet() {
     this.drawService.setDrawFlag(true);
+  }
+
+  disableBetFunction() {
+    this.betDisable = true;
   }
 }
