@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BetItem } from 'src/model/betItem';
 import { BetService } from 'src/service/bet/bet.service';
 import { CompetitionService } from 'src/service/competition/competition.service';
+import { DrawService } from 'src/service/draw/draw.service';
 
 @Component({
   selector: 'app-bet',
@@ -13,10 +14,13 @@ export class BetComponent implements OnInit {
   inputBox: string = '';
   totalBox: string = '';
 
-  constructor(private betService: BetService, private competitionService: CompetitionService) { }
+  constructor(
+    private betService: BetService,
+    private competitionService: CompetitionService,
+    private drawService: DrawService) { }
   ngOnInit(): void {
     this.competitionService.currentFlag.subscribe(flag => {
-      if(flag)
+      if (flag)
         this.clearBet();
     });
   }
@@ -51,6 +55,10 @@ export class BetComponent implements OnInit {
           .then().catch(reason => { console.error(reason); });
       })
       .catch(reason => { console.error(reason); });
-  this.totalBox = '';
+    this.totalBox = '';
+  }
+
+  drawBet(){
+    this.drawService.setDrawFlag(true);
   }
 }
