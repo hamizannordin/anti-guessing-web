@@ -12,12 +12,16 @@ export class DrawService {
   private drawObservable = new BehaviorSubject(false);
   drawFlag = this.drawObservable.asObservable();
 
+  private drawItem: DrawItem = new DrawItem();
+  private drawCombinationObservable = new BehaviorSubject(this.drawItem);
+  drawCombinationResult = this.drawCombinationObservable.asObservable();
+
   constructor(private api: ApiService) { }
 
   drawNumber(competitionId: string): Promise<DrawItem> {
     return new Promise(resolve => {
       this.api.apiGet(environment.API_URL + "/draw/" + competitionId)
-        .then(response => { 
+        .then(response => {
           resolve(response);
         })
         .catch(reason => console.error(reason));
@@ -26,5 +30,9 @@ export class DrawService {
 
   setDrawFlag(status: boolean) {
     this.drawObservable.next(status);
+  }
+
+  setDrawCombination(drawItem : DrawItem) {
+    this.drawCombinationObservable.next(drawItem);
   }
 }
