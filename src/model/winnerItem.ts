@@ -1,8 +1,8 @@
 export class WinnerItem {
-    winnerAbsoluteList: String[] | undefined;
-    winnerAlmostList: String[] | undefined;
-    firstRunnerUpAbsoluteList: String[] | undefined;
-    firstRunnerUpAlmostList: String[] | undefined;
-    secondRunnerUpAbsoluteList: String[] | undefined;
-    secondRunnerUpAlmostList: String[] | undefined;
+    winnerAbsoluteList: string[] | undefined;
+    winnerAlmostList: string[] | undefined;
+    firstRunnerUpAbsoluteList: string[] | undefined;
+    firstRunnerUpAlmostList: string[] | undefined;
+    secondRunnerUpAbsoluteList: string[] | undefined;
+    secondRunnerUpAlmostList: string[] | undefined;
 }
