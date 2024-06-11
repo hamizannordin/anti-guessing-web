@@ -20,57 +20,10 @@
 
   <!-- Resources -->
   <h2>Test your luck!</h2>
-
-  <div class="card" *ngIf="drawItem != null">
-    <p>The lucky numbers are...</p>
-  </div>
-
-  <div id="winner-absolute" class="card" *ngIf="winnerItem.winnerAbsoluteList != null">
-    <p>Congrats!!!</p>
-  </div>
-
-  <div id="winner-almost" class="card" *ngIf="winnerItem.winnerAlmostList != null">
-    <p>Congrats!!!</p>
-  </div>
-
-  <div id="first-runner-up-absolute" class="card" *ngIf="winnerItem.firstRunnerUpAbsoluteList != null">
-    <p>Congrats!!!</p>
-  </div>
-
-  <div id="first-runner-up-almost" class="card" *ngIf="winnerItem.firstRunnerUpAlmostList != null">
-    <p>Congrats!!!</p>
-  </div>
-
-  <div id="second-runner-up-absolute" class="card" *ngIf="winnerItem.secondRunnerUpAbsoluteList != null">
-    <p>Congrats!!!</p>
-  </div>
-
-  <div id="second-runner-up-almost" class="card" *ngIf="winnerItem.secondRunnerUpAlmostList != null">
-    <p>Congrats!!!</p>
-  </div>
-
-  <div>
-    <button id="reset-competition" (click)="$event.preventDefault();">Reset</button>
-  </div>
-
-  <div class="card">
-    <form id="guess-form">
-      <label>Place 8-digit number here:</label>
-      <input type="text" max="8">
-      <button type="submit" (click)="$event.preventDefault();">Submit</button>
-    </form>
-  </div>
-
-  <div class="card">
-    <div *ngIf="betList.length == 0; else displayBetList">
-      Start placing your bet!</div>
-  </div>
-
-  <ng-template #displayBetList>
-    <div *ngFor="let bet of betList">
-      {{bet.combination}}
-    </div>
-  </ng-template>
+  <app-draw></app-draw>
+  <app-winner></app-winner>
+  <app-competition></app-competition>
+  <app-bet></app-bet>
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
