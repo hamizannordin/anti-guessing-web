@@ -16,7 +16,7 @@ export class DrawComponent implements OnInit {
 
   ngOnInit(): void {
     this.competitionService.currentFlag.subscribe(flag => {
-      if(flag)
+      if (flag)
         this.drawItem = undefined;
     });
     this.drawService.drawFlag.subscribe(flag => {
@@ -30,6 +30,7 @@ export class DrawComponent implements OnInit {
     this.drawService.drawNumber(competitionId)
       .then(response => {
         this.drawItem = response;
+        this.drawService.setDrawCombination(this.drawItem);
       })
       .catch(reason => console.error(reason));
   }
